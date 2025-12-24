@@ -1,0 +1,284 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbar for webkit browsers (Chrome, Safari, Edge) - EXCEPT WorklistTable */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox - EXCEPT WorklistTable */
+* {
+  scrollbar-width: none;
+}
+
+/* Alternative for older browsers - EXCEPT WorklistTable */
+html {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* For all elements - EXCEPT WorklistTable */
+*:not(.worklist-container):not(.react-window):not(.react-window-list) {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*:not(.worklist-container):not(.react-window):not(.react-window-list)::-webkit-scrollbar {
+  display: none;
+}
+
+/* 🆕 NEW: WorklistTable specific scrollbar styles */
+.worklist-container {
+  scrollbar-width: auto !important;
+  -ms-overflow-style: auto !important;
+}
+
+.worklist-container::-webkit-scrollbar {
+  display: block !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.worklist-container::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+  border-radius: 6px !important;
+}
+
+.worklist-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
+  border-radius: 6px !important;
+  border: 2px solid #f1f5f9 !important;
+}
+
+.worklist-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8 !important;
+}
+
+.worklist-container::-webkit-scrollbar-corner {
+  background: #f1f5f9 !important;
+}
+
+/* Enhanced react-window scrollbars for WorklistTable */
+.worklist-container .react-window {
+  scrollbar-width: auto !important;
+  -ms-overflow-style: auto !important;
+}
+
+.worklist-container .react-window::-webkit-scrollbar {
+  display: block !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.worklist-container .react-window::-webkit-scrollbar-track {
+  background: #f8fafc !important;
+  border-radius: 6px !important;
+}
+
+.worklist-container .react-window::-webkit-scrollbar-thumb {
+  background: #e2e8f0 !important;
+  border-radius: 6px !important;
+  border: 2px solid #f8fafc !important;
+}
+
+.worklist-container .react-window::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1 !important;
+}
+
+.worklist-container .react-window-list {
+  scrollbar-width: auto !important;
+  -ms-overflow-style: auto !important;
+}
+
+.worklist-container .react-window-list::-webkit-scrollbar {
+  display: block !important;
+  width: 12px !important;
+}
+
+.worklist-container .react-window-list::-webkit-scrollbar-track {
+  background: #f8fafc !important;
+  border-radius: 6px !important;
+}
+
+.worklist-container .react-window-list::-webkit-scrollbar-thumb {
+  background: #e2e8f0 !important;
+  border-radius: 6px !important;
+}
+
+.worklist-container .react-window-list::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1 !important;
+}
+
+/* Add these animation classes to your existing CSS file */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add these toast animation classes */
+@keyframes enter {
+  0% {
+    transform: translate3d(100%, 0, 0) scale(0.6);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes leave {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(100%, 0, 0) scale(0.6);
+    opacity: 0;
+  }
+}
+
+.animate-enter {
+  animation: enter 0.35s ease-out;
+}
+
+.animate-leave {
+  animation: leave 0.4s ease-in forwards;
+}
+
+/* Toast container positioning */
+.toast-container {
+  z-index: 9999;
+}
+
+/* Medical toast styling */
+.medical-toast {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  backdrop-filter: blur(8px);
+}
+
+/* Additional medical-themed utilities */
+.medical-gradient-success {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.medical-gradient-error {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.medical-gradient-info {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.medical-gradient-warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+/* Add to your CSS file or styled-components */
+.worklist-table {
+  font-size: 0.75rem;
+  /* Smaller base font size */
+}
+
+.worklist-table th,
+.worklist-table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Make table responsive on smaller screens */
+@media (max-width: 1400px) {
+  .worklist-table {
+    font-size: 0.7rem;
+  }
+
+  .worklist-table th,
+  .worklist-table td {
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .worklist-table {
+    font-size: 0.65rem;
+  }
+}
+
+/* Add to your main CSS file or create a new one */
+/* Mobile responsive utilities */
+@media (max-width: 640px) {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Improve touch targets */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better scroll behavior */
+  .overflow-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent horizontal scroll */
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Tablet optimizations */
+  .table-cell {
+    padding: 4px 8px;
+  }
+}

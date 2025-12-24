@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  dicom-converter:
+    build: .
+    container_name: xcentic-dicom-converter
+    ports:
+      - "8765:8765"
+    environment:
+      - FLASK_ENV=production
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8765/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    # Optional: Mount volume for logs
+    volumes:
+      - ./logs:/app/logs
