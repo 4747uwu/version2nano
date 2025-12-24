@@ -1,5 +1,5 @@
 import axios from 'axios';
-import sessionManager from './sessionManager';
+import sessionManager from '../../services/sessionManager';
 
 // ✅ UPDATED: Use absolute backend URL instead of relative path
 // This ensures all requests go to the main backend server
