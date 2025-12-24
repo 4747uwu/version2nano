@@ -15,7 +15,7 @@ const connectDB = async () => {
 
                 // const MONGODB_URI ='mongodb://alice:alicePassword@64.227.187.164:27017/medical_project?authSource=admin&directConnection=true'
 
-                const MONGODB_URI ='mongodb+srv://pawrangerskyler_db_user:y7zV2rO5KRfPO5Hs@cluster0.ku1pxkx.mongodb.net/order23?retryWrites=true&w=majority&appName=Cluster0';
+                const MONGODB_URI ='mongodb+srv://pawrangerskyler_db_user:y7zV2rO5KRfPO5Hs@cluster0.ku1pxkx.mongodb.net/order33?retryWrites=true&w=majority&appName=Cluster0';
 
                 // mongodb://alice:alicePassword@159.203.168.110:27017/admin?authSource=admin&directConnection=true
 

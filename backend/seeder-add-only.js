@@ -9,7 +9,7 @@ dotenv.config();
 import User from './models/userModel.js';
 import Lab from './models/labModel.js';
 import Doctor from './models/doctorModel.js';
-const MONGODB_URI = 'mongodb+srv://pawrangerskyler_db_user:y7zV2rO5KRfPO5Hs@cluster0.ku1pxkx.mongodb.net/order23?retryWrites=true&w=majority&appName=Cluster0'
+const MONGODB_URI = 'mongodb+srv://pawrangerskyler_db_user:y7zV2rO5KRfPO5Hs@cluster0.ku1pxkx.mongodb.net/order33?retryWrites=true&w=majority&appName=Cluster0'
 
 const connectDB = async () => {
     try {

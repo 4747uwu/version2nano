@@ -29,6 +29,11 @@ const DicomStudySchema = new mongoose.Schema({
         age: String,
         gender: { type: String, index: { sparse: true, background: true } } // 🔥 Gender filtering
     },
+
+    
+
+
+
     
     // 🔧 OPTIMIZED: Study metadata with indexes
     studyDate: { 
@@ -54,6 +59,9 @@ const DicomStudySchema = new mongoose.Schema({
     gender: {
         type: String
     },
+
+
+    
     
 
     
@@ -479,6 +487,8 @@ const DicomStudySchema = new mongoose.Schema({
         lastCalculated: { type: Date },
         calculationMethod: { type: String, default: 'tatCalculator' }
     },
+
+    // 🆕 NEW: Clinical History stored in DicomStudy (PRIMARY)
     clinicalHistory: {
         clinicalHistory: { 
             type: String, 
@@ -524,8 +534,6 @@ const DicomStudySchema = new mongoose.Schema({
         lastSyncedAt: { type: Date },
         syncedBy: { type: String, default: 'system' }
     }
-
-
 
 }, { 
     timestamps: true,
