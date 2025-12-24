@@ -48,11 +48,11 @@ jobs:
           cd /opt/medical-project
           
           # Clean up and get fresh code
-          rm -rf healthCare
-          git clone https://github.com/4747uwu/healthCare.git
+          rm -rf version2nano
+          git clone https://github.com/4747uwu/version2nano.git
           
           # Navigate to the MedicalProject subdirectory
-          cd healthCare
+          cd version2nano
           
           # ✅ FIXED: Create production environment file with LOCAL MongoDB
           cat > .env << 'EOF'
