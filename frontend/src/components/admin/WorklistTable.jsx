@@ -33,7 +33,7 @@ import {
 import api from '../../services/api'
 import sessionManager from '../../services/sessionManager';
 
-import OnlineReportingButton from './OnlineReportingButton'; // ✅ ADD THIS
+import OpenOHIFViewerButton  from './OnlineReportingButton'; // ✅ ADD THIS
 
 // ✅ ADD: Wasabi download function inside your WorklistTable component
 // ✅ UPDATED: R2 CDN download function
