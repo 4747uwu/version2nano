@@ -7,7 +7,8 @@ import sessionManager from '../services/sessionManager';
 //   ? `${import.meta.env.VITE_BACKEND_URL}/api`  // Development: use external URL
 //   : '/api';  // Production: use nginx proxy
 
-  const API_URL = 'http://localhost:3000/api'; // Adjust port as needed
+  const API_URL = '/api'; // Adjust port as needed
+  // const API_URL = 'http://localhost:3000/api'; // Adjust port as needed
 
 
   
