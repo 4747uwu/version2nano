@@ -1,19 +1,21 @@
 import React from 'react';
 
-const OpenOHIFViewerButton = ({ studyInstanceUID }) => {
+const OpenOHIFViewerButton = ({ studyInstanceUID, studyId }) => {
   const handleClick = () => {
-    const proxyBaseURL = 'https://57e2-59-145-191-142.ngrok-free.app'; // Node.js proxy
-    const ohifViewerBaseURL = 'https://viewer.ohif.org/viewer';
-    
-    // Construct the full OHIF viewer URL
-    const viewerURL = `${ohifViewerBaseURL}?studyInstanceUIDs=${studyInstanceUID}&server=${encodeURIComponent(`${proxyBaseURL}/dicom-web`)}`;
+    // ✅ UPDATED: Open the full URL on another server
+    const externalServerURL = 'http://165.232.189.64'; // Your external server
+    const viewerURL = `${externalServerURL}/online-reporting/${studyId}?openOHIF=true`;
 
-    // Redirect to the OHIF viewer
+    // Open in new tab
     window.open(viewerURL, '_blank');
   };
 
   return (
-    <button onClick={handleClick} className="btn btn-primary">
+    <button 
+      onClick={handleClick} 
+      className="btn btn-primary"
+      title="Open Online Reporting with OHIF"
+    >
       Open in OHIF Viewer
     </button>
   );

@@ -874,8 +874,7 @@ const cardGrid = useMemo(() => (
                                   studyInstanceUID={study.studyInstanceUID}
                                   userRole={userRole}/>
 
-                                  <OnlineReportingButton study={study} /> {/* ✅ ADD THIS - Monitor/OHIF button */}
-                                    
+<OpenOHIFViewerButton studyId={study._id} studyInstanceUID={study.studyInstanceUID} />                                    
                                     <div className="flex-shrink-0"><DownloadDropdown study={study} /></div></div>}
                                   {visibleColumns.report && <div className="flex-shrink-0 w-12 px-2 flex items-center justify-center border-r border-gray-300 h-full"><ReportButton study={study} /></div>}
 
