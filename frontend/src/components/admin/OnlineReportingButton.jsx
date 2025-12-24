@@ -5,8 +5,9 @@ const OnlineReportingButton = ({ study }) => {
   const navigate = useNavigate();
 
   const handleOpenOHIF = () => {
+    // console.log('🔍 Navigating to Online Reporting with OHIF for study:', study._id);
     // Navigate to the reporting system with OHIF enabled
-    navigate(`/reporting/${study.orthancStudyID}?openOHIF=true`, {
+    navigate(`/reporting/${study._id}?openOHIF=true`, {
       state: { study }
     });
   };
