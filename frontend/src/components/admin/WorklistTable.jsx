@@ -33,7 +33,7 @@ import {
 import api from '../../services/api'
 import sessionManager from '../../services/sessionManager';
 
-import OpenOHIFViewerButton  from './ohifViewerButton'; // ✅ ADD THIS
+import OHIFReportButton  from './OHIFReportButton'; // ✅ ADD THIS
 
 // ✅ ADD: Wasabi download function inside your WorklistTable component
 // ✅ UPDATED: R2 CDN download function
@@ -874,7 +874,7 @@ const cardGrid = useMemo(() => (
                                   studyInstanceUID={study.studyInstanceUID}
                                   userRole={userRole}/>
 
-<OpenOHIFViewerButton studyId={study._id} studyInstanceUID={study.studyInstanceUID} />                                    
+<OHIFReportButton study={study} />                                    
                                     <div className="flex-shrink-0"><DownloadDropdown study={study} /></div></div>}
                                   {visibleColumns.report && <div className="flex-shrink-0 w-12 px-2 flex items-center justify-center border-r border-gray-300 h-full"><ReportButton study={study} /></div>}
 

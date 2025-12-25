@@ -28,12 +28,12 @@ import OwnerManagement from './pages/OwnerManagement';
 // ✅ NEW: Additional imports
 import TemplateManager from './components/layout/TemplateMangement';
 import OnlineReportingSystem from './components/layout/OnlineReportingSystem';
+import OnlineReportingWithOHIF from './components/admin/OnlineReportingSystemWithOHIF'; // 
+
 // 🆕 ADD:
 import DicomUploader from './pages/admin/DicomUploader';
 import DoctorTATReport from './pages/doctor/DoctorTATReport';
 import LabTATReport from './pages/lab/LabTATReport';
-
-import OnlineReportingSystemWithOHIF from './components/admin/OnlineReportingSystemWithOHIF'; // 
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
   const { currentUser, loading } = useAuth();
@@ -297,6 +297,16 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['admin', 'lab_staff', 'doctor_account']}>
                   <OnlineReportingSystem />
+                </ProtectedRoute>
+              } 
+            />
+            
+            {/* ✅ NEW: Online Reporting System Route with OHIF */}
+            <Route 
+              path="/reporting-ohif/:studyId" 
+              element={
+                <ProtectedRoute allowedRoles={['admin', 'lab_staff', 'doctor_account', 'doctor']}>
+                  <OnlineReportingWithOHIF />
                 </ProtectedRoute>
               } 
             />

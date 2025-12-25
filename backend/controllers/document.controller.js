@@ -2207,6 +2207,12 @@ static async generateReportWithDocxService(req, res) {
         // --- Step 1: Call the C# DOCX Generation Service ---
         // console.log(`📞 Calling C# service with template: ${templateName}`);
         console.log(DOCX_SERVICE_URL)
+
+        console.log("🚀 PAYLOAD BEING SENT TO C#:", JSON.stringify({
+    templateName: "drag2.docx",
+    placeholders: placeholders,
+    studyId: studyId 
+}, null, 2));
         
         const docxResponse = await axios.post(DOCX_SERVICE_URL, {
             templateName: "drag2.docx",
