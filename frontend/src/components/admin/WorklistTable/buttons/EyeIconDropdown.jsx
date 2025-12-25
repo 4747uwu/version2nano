@@ -27,7 +27,7 @@ const EyeIconDropdown = React.memo(({ studyInstanceUID, userRole }) => {
       // 🟡 Update status to YELLOW (doctor_opened_report) if user is doctor
       await updateStudyInteractionStatus('ohif_opened');
       
-      const ohifBaseURL = import.meta.env.VITE_OHIF_LOCAL_URL || 'http://localhost:4000';
+      const ohifBaseURL = 'https://viewer.pacs.xcentic.com';
       const orthancBaseURL = import.meta.env.VITE_ORTHANC_URL || 'http://localhost:8042';
       
       // 🔐 Orthanc credentials
